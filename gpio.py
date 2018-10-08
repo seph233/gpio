@@ -1,7 +1,6 @@
 from flask import Flask
 import RPi.GPIO as GPIO #import the GPIO library
 import datetime
-import time
 
 app = Flask(__name__)
 
@@ -11,7 +10,7 @@ def logmsg(message):
         f.write(str(datetime.datetime.now()) + " - " + message)
 
 @app.route("/getgpiostatus/<pin>")
-def getdevicepowerstatus(pin):
+def getgpiostatus(pin):
     response = GPIO.input(int(pin))
 
     if response:
