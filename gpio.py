@@ -1,6 +1,7 @@
 from flask import Flask
 import RPi.GPIO as GPIO #import the GPIO library
 import datetime
+from time import sleep
 
 app = Flask(__name__)
 
@@ -31,3 +32,6 @@ setup_app()
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=12002)
+    while(1==1):
+        print(getgpiostatus("7"))
+        sleep(2)
