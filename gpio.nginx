@@ -1,0 +1,8 @@
+server {
+    listen       10002;
+    server_name gpio;
+
+    location / {
+        proxy_pass http://127.0.0.1:11002;
+    }
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=gpio
+After=multi-user.target
+ 
+[Service]
+Type=simple
+Restart=always
+User=root
+WorkingDirectory=/opt/gpio/
+ExecStart=/usr/local/bin/gunicorn gpio:app -b 127.0.0.1:11002
+
+[Install]
+WantedBy=multi-user.target
