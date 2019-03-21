@@ -26,12 +26,12 @@ def getgpiostatus(pin):
 
 def setup_app():
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 setup_app()
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=12002)
     while(1==1):
-        print(getgpiostatus("7"))
+        print(getgpiostatus("11"))
         sleep(2)
